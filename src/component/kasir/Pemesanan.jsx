@@ -225,7 +225,7 @@ export default function Pemesanan() {
                   <img
                     className="w-80 h-60 p-8 rounded-t-lg"
                     src={`http://localhost:8000/foto/${menu.gambar}`}
-                    alt="product"
+                    alt="productfarhan"
                   />
                   <div className="px-5 pb-5">
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900">

@@ -219,7 +219,7 @@ export default function Pemesanan() {
                 <div
                   key={menu.id}
                   // className="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
-                  // kk
+                  // kkkkkkkkkk
                   className="gambar"
                 >
                   <img

@@ -35,10 +35,10 @@ export default function TabsKasir() {
     <div class="fixed flex h-full">
       <nav class="bg-gray-900 w-40  justify-between flex flex-col ">
         <div class="mt-10 mb-10">
-          <a href="#">
+          <a href="/pemesanan">
             <img
-              src="https://img.freepik.com/free-vector/flat-illustration-customer-support_23-2148893327.jpg"
-              class="rounded-full w-14 h-14 mb-3 mx-auto"
+              src="https://img.freepik.com/free-vector/coffee-shop-badge-vintage-style_1176-95.jpg?t=st=1696953203~exp=1696953803~hmac=b48abd9e48315df0a0b013603e7819fb8e402c0ade6b7bf76313f3f9ca0c76f1"
+              class="rounded-full w-20 h-20 mb-3 mx-auto"
             />
           </a>
           <div class="mt-10">

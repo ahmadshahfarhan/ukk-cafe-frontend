@@ -11,6 +11,7 @@ export default function Riwayat() {
   const [meja, setMeja] = useState([]);
   const [nomor_meja, setNomorMeja] = useState("");
   const [search, setValue] = useState("");
+  const [namaPelangganFilter, setNamaPelangganFilter] = useState("");
   const [originalTransaksi, setOriginalTransaksi] = useState([]);
 
   useEffect(() => {
@@ -54,9 +55,24 @@ export default function Riwayat() {
     setTransaksi(dataFiltered);
   };
 
+  const handleNamaPelangganFilter = (nama) => {
+    setNamaPelangganFilter(nama);
+
+    if (nama === "") {
+      setTransaksi(originalTransaksi);
+      return;
+    }
+
+    const dataFiltered = originalTransaksi.filter((data) => {
+      return data.nama_pelanggan.toLowerCase().includes(nama.toLowerCase());
+    });
+    setTransaksi(dataFiltered);
+  };
+
   const handleShowAll = () => {
     setTransaksi(originalTransaksi);
     setValue("");
+    setNamaPelangganFilter("");
   };
 
   const handleBayar = async (id) => {
@@ -100,7 +116,7 @@ export default function Riwayat() {
   };
 
   return (
-    <div class="bg">
+    <div className="bg">
       <input
         type="text"
         value={search}
@@ -110,6 +126,17 @@ export default function Riwayat() {
         name="search"
         placeholder="Search by nomor meja"
         className="ml-40 w-32 py-2 pl-10 ml-10 mt-5 text-sm rounded-md sm:w-auto focus:outline-none text-black bg-gray-200"
+      />
+
+      <input
+        type="text"
+        value={namaPelangganFilter}
+        onChange={(e) => {
+          handleNamaPelangganFilter(e.target.value);
+        }}
+        name="search"
+        placeholder="Search by nama pelanggan"
+        className="ml-5 w-32 py-2 pl-10 mt-5 text-sm rounded-md sm:w-auto focus:outline-none text-black bg-gray-200"
       />
 
       <div className="ml-40 overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">

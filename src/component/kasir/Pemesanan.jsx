@@ -27,7 +27,7 @@ export default function Pemesanan() {
   }, 0);
   const totalQty = pesanan.reduce((qty, item) => {
     return qty + (item.qty);
-}, 0)
+  }, 0)
   const [id_menu, setIdMenu] = useState("");
   const [meja, setMeja] = useState([]);
   const [selectedMeja, setSelectedMeja] = useState("");
@@ -101,7 +101,7 @@ export default function Pemesanan() {
       pesanan.map((detail) => {
         const { id, harga, qty } = detail;
         return {
-          id_menu:id,
+          id_menu: id,
           qty,
           subtotal: harga * qty,
         };
@@ -149,13 +149,13 @@ export default function Pemesanan() {
 
     e.preventDefault();
 
-      // Assuming qty is a variable representing the quantity
-  if (totalQty <= 0) {
-    // Display an error message or handle the case where qty is 0
-    toast.info("Pesanan kosong");
-    console.error("Quantity must be greater than 0");
-    return;
-  }
+    // Assuming qty is a variable representing the quantity
+    if (totalQty <= 0) {
+      // Display an error message or handle the case where qty is 0
+      toast.info("Pesanan kosong");
+      console.error("Quantity must be greater than 0");
+      return;
+    }
 
     const data_transaksi = {
       id_user: sessionStorage.getItem("id_user"),
@@ -219,13 +219,12 @@ export default function Pemesanan() {
                 <div
                   key={menu.id}
                   // className="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
-                  // kkkkkkkkkk
                   className="gambar"
                 >
                   <img
                     className="w-80 h-60 p-8 rounded-t-lg"
                     src={`http://localhost:8000/foto/${menu.gambar}`}
-                    alt="productfarhan"
+                    alt="product"
                   />
                   <div className="px-5 pb-5">
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900">
@@ -327,7 +326,7 @@ export default function Pemesanan() {
           Pesan
         </button>
       </div>
-          
+
       {showModal ? (
         <div className="absolute">
           <div className="justify-center  items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -380,7 +379,7 @@ export default function Pemesanan() {
                             <div className="ml-4 flex flex-1 flex-col">
                               <div>
                                 <div className="flex justify-between text-base font-medium text-gray-900">
-                                {/* <p>{product.id}</p> */}
+                                  {/* <p>{product.id}</p> */}
                                   <h3>
                                     <p>{product.nama_menu}</p>
                                   </h3>

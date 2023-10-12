@@ -50,8 +50,19 @@ export default function TabsKasir() {
                         alt="Profile Image"
                     /> */}
                 </div>
-                <h1>{namaUser}</h1>
-                <p>{role}</p>
+                <div className="mb-6 mr-4 relative group">
+                    <img
+                        src="https://img.freepik.com/free-vector/flat-illustration-customer-support_23-2148893327.jpg"
+                        className="w-12 h-12 rounded-full cursor-pointer"
+                        alt="Profile Image"
+                    />
+                    <div className="absolute hidden mt-2 py-2 w-40 bg-white border border-gray-300 rounded-lg shadow-lg group-hover:block right-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                        <div className="p-2">
+                            <p className="text-gray-800 text-sm font-semibold">{namaUser}</p>
+                            <p className="text-gray-600 text-xs">{role}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
